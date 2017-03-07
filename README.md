@@ -143,7 +143,24 @@ editor
 }
 ```
 - onTextChanged - text is updated with delay(default is 300 milliseconds)
-string
+```
+{
+  editor: editorInstance,
+  html: html,
+  text: text,
+  delta: delta,
+  oldDelta: oldDelta,
+  source: source
+}
 
-<input debounce [delay]="3000" (onTextChanged)="saveText(editableContent)" [(ngModel)]="editableContent" name="Debounce input">
+in Template:
+
+<input debounce [delay]="3000" (onTextChanged)="saveText($event)" [(ngModel)]="editableContent" name="Debounce input">
+<div [innerHtml]="editableContent"></div>
+
+in yourComponent.ts
+
+saveText(eventVal){
+  console.log(eventVal.html)
+}
 ```
