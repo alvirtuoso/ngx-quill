@@ -145,4 +145,5 @@ editor
 - onTextChanged - text is updated with delay(default is 300 milliseconds)
 string
 
+<input debounce [delay]="3000" (onTextChanged)="saveText(editableContent)" [(ngModel)]="editableContent" name="Debounce input">
 ```
