@@ -132,6 +132,17 @@ editor
   oldDelta: oldDelta,
   source: source
 }
+Example:
+in Template:
+
+<input debounce [delay]="3000" (onContentChanged)="saveText($event)" [(ngModel)]="editableContent" name="Debounce input">
+<div [innerHtml]="editableContent"></div>
+
+in yourComponent.ts
+
+saveText(eventVal){
+  console.log(eventVal.html)
+}
 ```
 - onSelectionChanged - selection is updated
 ```
@@ -152,8 +163,8 @@ editor
   oldDelta: oldDelta,
   source: source
 }
-
-in Template:
+Example:
+in your template
 
 <input debounce [delay]="3000" (onTextChanged)="saveText($event)" [(ngModel)]="editableContent" name="Debounce input">
 <div [innerHtml]="editableContent"></div>
