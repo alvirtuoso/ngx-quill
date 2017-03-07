@@ -142,3 +142,7 @@ editor
   source: source
 }
 ```
+- onTextChanged - text is updated with delay(default is 300 milliseconds)
+string
+
+```
